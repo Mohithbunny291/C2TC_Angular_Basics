@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular-Basics';
 
+  //1. Class Binding
   public classclo = "str";
   public hasError = true;
 
@@ -17,9 +18,11 @@ export class AppComponent {
     "sti": this.hasError
   }
 
-  public name = "Mohith";
-  public msg ="";
 
+  //2. Style Binding
+  
+
+  //3. Event Binding
   public greeting="";
 
   onClick(event: any){
@@ -28,8 +31,16 @@ export class AppComponent {
   }
 
 
+  //5. Component Interaction
+  public name = "Mohith";
+  public msg ="";
+
+  
+
+
   public color = "";
 
+  //4. Structural Directives
   public colors = ['red', 'green', 'yellow', 'black'];
 
   displayName=false;
@@ -43,10 +54,12 @@ export class AppComponent {
     fontStyle: "italic"
   }
 
+  //Template Reference
   logmsg(valu:any){
     console.log(valu);
   }
 
+  //Two Way Binding
   inputValue: string = '';
   displayValue: string = '';
 
@@ -56,9 +69,29 @@ export class AppComponent {
     // Manually update the model (counter) by incrementing its value
     this.counter++;
   }
+  decrementCounter() {
+    // Manually update the model (counter) by incrementing its value
+    this.counter--;
+  }
   updateValue() {
     // Update the model (displayValue) with the input value
     this.displayValue = this.inputValue;
   }
 
+  //Pips
+  public namePips = "mohith reddy elluru";
+  public person= {
+    name: "Mohith",
+    college: "Gitam",
+    id: 3221232320
+  }
+  public date = new Date;
+
+
+  //Services
+  
+
+
+  
 }
+

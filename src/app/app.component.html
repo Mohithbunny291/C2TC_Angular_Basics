@@ -1,131 +1,170 @@
-<div class="txt" style="text-align: center;">Welcome to {{title}}
-<br>-------------------------------------------------------------------
-</div>
-<br>
+<div>
+
+          <div class="txt" style="text-align: center; background-color: rgb(53, 74, 67);">Welcome to {{title}}
+            <br>-------------------------------------------------------------------
+          </div>
+          <br>
 
 
-<div style="text-align: center; font-size: 35px;">Class Binding
-  <br>--------------------
-  <h1 class="stg">Mohith</h1>
-  <h1 [class] = "classclo">Mohith</h1>
-  <h1 class="sti" [class] = "classclo">Mohith</h1>
-  <h1 [class.str] = "hasError">Mohith</h1>
-  <h1 [ngClass] = "objclas">Mohith</h1>
-  <h1 class="txt">Mohith</h1>
-</div>
+          <div style="text-align: center; font-size: 35px; float: left; background-color: rgb(126, 176, 85);">Class Binding
+            <br>--------------------
+            <h1 class="stg">Mohith</h1>
+            <h1 [class] = "classclo">Mohith</h1>
+            <h1 class="sti" [class] = "classclo">Mohith</h1>
+            <h1 [class.str] = "hasError">Mohith</h1>
+            <h1 [ngClass] = "objclas">Mohith</h1>
+            <h1 class="txt">Mohith</h1>
+          </div>
 
 
-<div style="text-align: center; font-size: 35px;">Style Binding
-  <br>--------------------
-  <h1 [style.color] = "'orange'">Style Binding 1</h1>
-  <h1 [style.color] = "hasError1 ? 'red' : 'green' ">Style Binding 2</h1>
-  <h1 [style.color] = "highlightColor">Style Binding 3</h1>
-  <h1 [ngStyle] = "titleStyle">Style Binding 4</h1>
-</div>
+          <div style="text-align: center; font-size: 35px; background-color: rgb(145, 197, 241);">Style Binding
+            <br>--------------------
+            <h1 [style.color] = "'orange'">Style Binding 1</h1>
+            <h1 [style.color] = "hasError1 ? 'red' : 'green' ">Style Binding 2</h1>
+            <h1 [style.color] = "highlightColor">Style Binding 3</h1>
+            <h1 [ngStyle] = "titleStyle">Style Binding 4</h1>
+          </div>
+
+          <br>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+          <div style="text-align: center; font-size: 35px;float: right; background-color: rgb(193, 108, 48);">Event Binding
+            <br>--------------------<br>
+            <button (click)="onClick($event)"> Click {{greeting}}</button><br>
+            {{greeting}}<br>
+            <button (click)="greeting='Hello'"> Click {{greeting}}</button>
+          </div>
+          <br>
+
+          <div class="backg" style="text-align: center; font-size: 35px; float: left; background-color: rgb(2, 118, 118);">Structural Directives
+            <br>-------------------- <br>
+            <div>
+              <h1 *ngIf="displayName">
+              Mohith
+              </h1>
+              --------------------------------
+              ngIF
+              <h1 *ngIf="displayName; else elseBlock">
+                Mohith
+              </h1>
+              <ng-template #elseBlock>
+                <h1>
+                  Hidden
+                </h1>
+              </ng-template>
+              --------------------------------ngIf
+            
+              <h1 *ngIf="displayName; then thenBlock; else elseBlock">
+              </h1>
+              <ng-template #thenBlock>
+                Mohith
+              </ng-template>
+              <ng-template #elseBlock>
+                Hidden
+              </ng-template>
+              --------------------------------ngSwitch
+              <div [ngSwitch] = "color">
+                <p *ngSwitchCase="'black'">Black ngSwitch</p>
+                <p *ngSwitchCase="'yellow'">Yellow ngSwitch</p>
+                <div *ngSwitchDefault>Default ngSwitch</div>
+              </div>
+              <br>
+              --------------------------------ngFor
+              <div *ngFor="let color of colors">
+                <h2>{{color}}</h2>
+              </div>
+              --------------------------------
+              <div *ngFor="let color of colors; index as i">
+                <h2>{{i}} {{color}}</h2>
+              </div>
+              --------------------------------
+              <div *ngFor="let color of colors; odd as i">
+                <h2>{{i}} {{color}}</h2>
+              </div>
+              --------------------------------
+              <div *ngFor="let color of colors; even as i">
+                <h2>{{i}} {{color}}</h2>
+              </div>
+              --------------------------------
+              <div *ngFor="let color of colors; first as i">
+                <h2>{{i}} {{color}}</h2>
+              </div>
+              --------------------------------
+              <div *ngFor="let color of colors; last as i">
+                <h2>{{i}} {{color}}</h2>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; font-size: 35px; background-color: yellowgreen;">Component Interaction
+            <br>-------------------- <br>
+            <h4>App Component</h4>
+            {{msg}}
+            
+            </div>
+            <br>
+            
+            <div style="text-align: center; background-color: yellowgreen;">
+                  <h2>
+                        <app-test (childEvent)= "msg = $event" [parentData] = "name"></app-test>
+                  </h2>
+          </div>
 
 
-<div style="text-align: center; font-size: 35px;">Event Binding
-  <br>--------------------<br>
-  <button (click)="onClick($event)"> Click {{greeting}}</button><br>
-  {{greeting}}<br>
-  <button (click)="greeting='Hello'"> Click {{greeting}}</button>
-</div>
-<br>
-
-<div style="text-align: center; font-size: 35px;">Structural Directives
-  <br>-------------------- <br>
-  <div>
-    <h1 *ngIf="displayName">
-    Mohith
-    </h1>
-    --------------------------------
-    ngIF
-    <h1 *ngIf="displayName; else elseBlock">
-      Mohith
-    </h1>
-    <ng-template #elseBlock>
-      <h1>
-        Hidden
-      </h1>
-    </ng-template>
-    --------------------------------ngIf
-  
-    <h1 *ngIf="displayName; then thenBlock; else elseBlock">
-    </h1>
-    <ng-template #thenBlock>
-      Mohith
-    </ng-template>
-    <ng-template #elseBlock>
-      Hidden
-    </ng-template>
-    --------------------------------ngSwitch
-    <div [ngSwitch] = "color">
-      <p *ngSwitchCase="'black'">Black ngSwitch</p>
-      <p *ngSwitchCase="'yellow'">Yellow ngSwitch</p>
-      <div *ngSwitchDefault>Default ngSwitch</div>
-    </div>
-    <br>
-    --------------------------------ngFor
-    <div *ngFor="let color of colors">
-      <h2>{{color}}</h2>
-    </div>
-    --------------------------------
-    <div *ngFor="let color of colors; index as i">
-      <h2>{{i}} {{color}}</h2>
-    </div>
-    --------------------------------
-    <div *ngFor="let color of colors; odd as i">
-      <h2>{{i}} {{color}}</h2>
-    </div>
-    --------------------------------
-    <div *ngFor="let color of colors; even as i">
-      <h2>{{i}} {{color}}</h2>
-    </div>
-    --------------------------------
-    <div *ngFor="let color of colors; first as i">
-      <h2>{{i}} {{color}}</h2>
-    </div>
-    --------------------------------
-    <div *ngFor="let color of colors; last as i">
-      <h2>{{i}} {{color}}</h2>
-    </div>
-  </div>
-</div>
-
-<div style="text-align: center; font-size: 35px;">Component Interaction
-  <br>-------------------- <br>
-  <h4>App Component</h4>
-  {{msg}}
-  
-  </div>
-  <br>
-  
-  <div style="text-align: center;">
-        <h2>
-              <app-test (childEvent)= "msg = $event" [parentData] = "name"></app-test>
-        </h2>
-</div>
 
 
+          <div style="text-align: center; font-size: 35px; background-color: rgb(113, 51, 113);">Template Reference
+            <br>-------------------- <br>
+            <input #myInput type="text">
+            <button (click)="logmsg(myInput.value)">Log</button>
+          </div>
+
+          <br><br>
+
+          <div style="text-align: center; font-size: 35px; background-color: tomato;">Two Way Binding
+            <br>-------------------- <br>
+            <div>
+              <button (click)="incrementCounter()">Increment</button>
+              <p>{{ counter }}</p>
+              <button (click)="decrementCounter()">Decrement</button><br>
+              
+              --------------------
+              <p>{{ displayValue }}</p>  
+              <input type="text" [(ngModel)]="inputValue">
+              <button (click)="updateValue()">Update</button>
+            
+            </div>
+          </div>
+
+          <br>
+
+          <div style="text-align: center; font-size: 35px; background-color: cornflowerblue;">Pipes
+            <br>-------------------- <br>
+            <h4>{{namePips | uppercase}}</h4>
+            <h4>{{namePips | lowercase}}</h4>
+            <h4>{{namePips | titlecase}}</h4>
+            <h4>{{namePips | slice: 6:12 | titlecase}}</h4>
+
+            <h5>{{person | json}}</h5>
+            
+            <h5>{{3.3159 | number: '1.2-3'}}</h5>
+
+            <h5>{{0.23 | percent}}</h5>
+
+            <h2>{{5.65 | currency:'INR'}}</h2>
+
+            <h5>{{date}}</h5>
+            <h5>{{date | date:'shortDate'}}</h5>
+            <h5>{{date | date:'shortTime'}}</h5>
+          </div>
 
 
-<div style="text-align: center; font-size: 35px;">Template Reference
-  <br>-------------------- <br>
-  <input #myInput type="text">
-  <button (click)="logmsg(myInput.value)">Log</button>
-</div>
+          <div style="text-align: center; font-size: 35px; 
+            float: right; background-color: skyblue;">Services
+            <br>-------------------- <br>
+            <app-employee-list></app-employee-list>
+            <P>''Duplicate data is created so we go for services''</P>
+            <app-employee-details></app-employee-details> <!--Duplicate data is created so we go for services-->
+          </div>
 
-<br><br>
-
-<div style="text-align: center; font-size: 35px;">Two Way Binding
-  <br>-------------------- <br>
-  <div>
-    <button (click)="incrementCounter()">Increment</button>
-    <p>{{ counter }}</p>
-    --------------------
-    <p>{{ displayValue }}</p>  
-    <input type="text" [(ngModel)]="inputValue">
-    <button (click)="updateValue()">Update</button>
-   
-  </div>
+          
 </div>
