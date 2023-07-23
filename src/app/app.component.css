@@ -26,3 +26,8 @@
     .backg{
       background-color: rgb(28, 184, 195);
     }
+    .navc{
+      font-style: italic;
+      color: chocolate;
+      background-color: rgb(14, 4, 0);
+    }

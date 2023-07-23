@@ -164,15 +164,25 @@
             <app-employee-list></app-employee-list>
             <P>''Duplicate data is created so we go for services''</P>
             <app-employee-details></app-employee-details> <!--Duplicate data is created so we go for services-->
-          </div>
-
-      
-          <div style="text-align: center; font-size: 35px; 
-            float: left; background-color: skyblue;"> Routing and Navigation
-            <br>-------------------------------- <br>
-            <app-employee-list-r></app-employee-list-r>
-            <app-department-list-r></app-department-list-r>
-          </div>
+          </div>         
           
-          <router-outlet></router-outlet>
+</div>
+
+<div>
+
+
+
+  <div style="text-align: center; font-size: 35px; 
+    float: left; background-color: skyblue;"> Routing and Navigation
+    <br>-------------------------------- <br>
+    <nav>
+      <h4><a routerLink="/departments" routerLinkActive="navc">Departments</a></h4>
+      <h4><a routerLink="/employees" routerLinkActive="navc">Employees</a></h4>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+
+  
+
+
 </div>
